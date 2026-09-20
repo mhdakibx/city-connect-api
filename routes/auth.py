@@ -24,7 +24,6 @@ class CreateUsers(BaseModel):
     firstname : str
     lastname : str
     password : str
-    role : str
 
 class UpdateUser(BaseModel):
     email : Optional[str] = Field(default=None)
@@ -85,7 +84,6 @@ def create_users(db : db_dependency, new_user : CreateUsers):
         lastname = new_user.lastname,
         hash_password = bcrypt_context.hash(new_user.password),
         is_active = True,
-        role = new_user.role
     )
 
     db.add(user_model)
