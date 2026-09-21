@@ -14,7 +14,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173"
+        "http://localhost:5173",
+        "https://city-connect-frontend-liard.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
